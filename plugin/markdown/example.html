@@ -1,93 +1,172 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>reveal.js - Markdown Demo</title>
+    <title>reveal.js - Markdown Demo</title>
 
-		<link rel="stylesheet" href="../../css/reveal.css">
-		<link rel="stylesheet" href="../../css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme/white.css" id="theme">
 
-        <link rel="stylesheet" href="../../lib/css/monokai.css">
-	</head>
+    <link rel="stylesheet" href="../../lib/css/monokai.css">
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<div class="slides">
-
-                <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
-                <section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
-
-                <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
-                <section data-markdown data-separator="---">
-                    <script type="text/template">
-                        ## Demo 1
-                        Slide 1
-                        ---
-                        ## Demo 1
-                        Slide 2
-                        ---
-                        ## Demo 1
-                        Slide 3
+        <div class="slides">
+            <section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+            <section data-markdown data-separator="---">
+                <script type="text/template">
+                        # 极简工作
+                        Wan-Ti
+                        
+                        ## 产品功能
+                        
+                        * 使用markdown语法实现PPT的快速制作
+                        * 保证用户体验，扩大用户范围
+                        
+                        
+                        
+                        ##  项目流程
+                        
+                        ###  first day
+                        * 同类产品市场调研
+                        * 使用原生JS完成核心功能的实现（如何实现PPT换页功能）
+                        
+                        
+                        ###   Second Day
+                        
+                        * 对菜单栏的样式进行设计与实现
+                        * 菜单栏的功能实现（进入与推出，tab切换）
+                        * 完成编辑器模块
+                        
+                        ### third day
+                        * 完成主题切换功能
+                        * 使用CSS实现转场动画
+                        * 利用插件实现PDF下载功能
+                        
+                        ### fourth day 
+                        * 使用<strong>leadcloud</strong>增强编辑器上传图片功能
+                        *  实现集中图片上传功能
+                        * 开发演讲者模式
+                        
+                        
+                        ## 遗留问题
+                        
+                        * 菜单栏背景设置成渐变之后会变成透明
+                        * 无法区分大小写,默认为全部大写
                     </script>
-                </section>
-
-                <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
-                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-                    <script type="text/template">
-                        ## Demo 2
-                        Slide 1.1
-
-                        --
-
-                        ## Demo 2
-                        Slide 1.2
-
-                        ---
-
-                        ## Demo 2
-                        Slide 2
+            </section>
+            <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                <script type="text/template">
+                    # 极简工作
+                    Wan-Ti
+                    
+                    ## 产品功能
+                    
+                    * 使用markdown语法实现PPT的快速制作
+                    * 保证用户体验，扩大用户范围
+                    
+                    
+                    
+                    ##  项目流程
+                    
+                    ###  first day
+                    * 同类产品市场调研
+                    * 使用原生JS完成核心功能的实现（如何实现PPT换页功能）
+                    
+                    
+                    ###   Second Day
+                    
+                    * 对菜单栏的样式进行设计与实现
+                    * 菜单栏的功能实现（进入与推出，tab切换）
+                    * 完成编辑器模块
+                    
+                    ### third day
+                    * 完成主题切换功能
+                    * 使用CSS实现转场动画
+                    * 利用插件实现PDF下载功能
+                    
+                    ### fourth day 
+                    * 使用<strong>leadcloud</strong>增强编辑器上传图片功能
+                    *  实现集中图片上传功能
+                    * 开发演讲者模式
+                    
+                    
+                    ## 遗留问题
+                    
+                    * 菜单栏背景设置成渐变之后会变成透明
+                    * 无法区分大小写,默认为全部大写
                     </script>
-                </section>
+            </section>
 
-                <!-- No "extra" slides, since there are no separators defined (so they'll become horizontal rulers) -->
-                <section data-markdown>
-                    <script type="text/template">
-                        A
-
-                        ---
-
-                        B
-
-                        ---
-
-                        C
+            <!-- No "extra" slides, since there are no separators defined (so they'll become horizontal rulers) -->
+            <section data-markdown>
+                <script type="text/template">
+                    # 极简工作
+                    Wan-Ti
+                    
+                    ## 产品功能
+                    
+                    * 使用markdown语法实现PPT的快速制作
+                    * 保证用户体验，扩大用户范围
+                    
+                    
+                    
+                    ##  项目流程
+                    
+                    ###  first day
+                    * 同类产品市场调研
+                    * 使用原生JS完成核心功能的实现（如何实现PPT换页功能）
+                    
+                    
+                    ###   Second Day
+                    
+                    * 对菜单栏的样式进行设计与实现
+                    * 菜单栏的功能实现（进入与推出，tab切换）
+                    * 完成编辑器模块
+                    
+                    ### third day
+                    * 完成主题切换功能
+                    * 使用CSS实现转场动画
+                    * 利用插件实现PDF下载功能
+                    
+                    ### fourth day 
+                    * 使用<strong>leadcloud</strong>增强编辑器上传图片功能
+                    *  实现集中图片上传功能
+                    * 开发演讲者模式
+                    
+                    
+                    ## 遗留问题
+                    
+                    * 菜单栏背景设置成渐变之后会变成透明
+                    * 无法区分大小写,默认为全部大写
                     </script>
-                </section>
+            </section>
 
-                <!-- Slide attributes -->
-                <section data-markdown>
-                    <script type="text/template">
+            <!-- Slide attributes -->
+            <section data-markdown>
+                <script type="text/template">
                         <!-- .slide: data-background="#000000" -->
                         ## Slide attributes
                     </script>
-                </section>
+            </section>
 
-                <!-- Element attributes -->
-                <section data-markdown>
-                    <script type="text/template">
+            <!-- Element attributes -->
+            <section data-markdown>
+                <script type="text/template">
                         ## Element attributes
                         - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
                         - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
                     </script>
-                </section>
+            </section>
 
-                <!-- Code -->
-                <section data-markdown>
-                    <script type="text/template">
+            <!-- Code -->
+            <section data-markdown>
+                <script type="text/template">
                         ```php
                         public function foo()
                         {
@@ -97,38 +176,38 @@
                         }
                         ```
                     </script>
-                </section>
+            </section>
 
-                <!-- Images -->
-                <section data-markdown>
-                    <script type="text/template">
+            <!-- Images -->
+            <section data-markdown>
+                <script type="text/template">
                         ![Sample image](https://s3.amazonaws.com/static.slid.es/logo/v2/slides-symbol-512x512.png)
                     </script>
-                </section>
+            </section>
 
-            </div>
-		</div>
+        </div>
+    </div>
 
-		<script src="../../js/reveal.js"></script>
+    <script src="../../js/reveal.js"></script>
 
-		<script>
+    <script>
 
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: '../highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../notes/notes.js' }
-				]
-			});
+            dependencies: [
+                { src: 'marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: '../notes/notes.js' }
+            ]
+        });
 
-		</script>
+    </script>
 
-	</body>
+</body>
+
 </html>
