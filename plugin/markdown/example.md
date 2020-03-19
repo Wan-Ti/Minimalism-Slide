@@ -1,36 +1,53 @@
-# Markdown Demo
+# 极简工作
 
 
 
-## External 1.1
+## 产品功能
 
-Content 1.1
+使用markdown语法实现PPT的快速制作
 
-Note: This will only appear in the speaker notes window.
-
-
-## External 1.2
-
-Content 1.2
+保证用户体验，扩大用户范围
 
 
 
-## External 2
+## 项目流程
 
-Content 2.1
-
-
-
-## External 3.1
-
-Content 3.1
+* first day
+* Second Day
+* third day
+* fourth day
 
 
-## External 3.2
 
-Content 3.2
+### first day
+
+同类产品市场调研
+
+使用原生JS完成核心功能的实现（如何实现PPT换页功能）
 
 
-## External 3.3
+### Second Day
 
-![External Image](https://s3.amazonaws.com/static.slid.es/logo/v2/slides-symbol-512x512.png)
+对菜单栏的样式进行设计与实现
+
+菜单栏的功能实现（进入与推出，tab切换）
+
+完成编辑器模块
+
+
+### third day
+
+完成主题切换功能
+
+使用CSS实现转场动画
+
+实现PDF下载功能
+
+
+### fourth day
+
+使用<strong>leadcloud</strong>增强编辑器上传图片功能
+
+实现集中图片上传功能
+
+开发演讲者模式 

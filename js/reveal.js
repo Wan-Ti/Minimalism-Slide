@@ -1,19 +1,11 @@
-/*!
- * reveal.js
- * http://revealjs.com
- * MIT licensed
- *
- * Copyright (C) 2020 Hakim El Hattab, http://hakim.se
- */
+
 (function( root, factory ) {
 	if( typeof define === 'function' && define.amd ) {
-		// AMD. Register as an anonymous module.
 		define( function() {
 			root.Reveal = factory();
 			return root.Reveal;
 		} );
 	} else if( typeof exports === 'object' ) {
-		// Node. Does not work with strict CommonJS.
 		module.exports = factory();
 	} else {
 		// Browser globals.
@@ -25,7 +17,6 @@
 
 	var Reveal;
 
-	// The reveal.js version
 	var VERSION = '3.9.2';
 
 	var SLIDES_SELECTOR = '.slides section',
@@ -128,30 +119,6 @@
 			// Change the presentation direction to be RTL
 			rtl: false,
 
-			// Changes the behavior of our navigation directions.
-			//
-			// "default"
-			// Left/right arrow keys step between horizontal slides, up/down
-			// arrow keys step between vertical slides. Space key steps through
-			// all slides (both horizontal and vertical).
-			//
-			// "linear"
-			// Removes the up/down arrows. Left/right arrows step through all
-			// slides (both horizontal and vertical).
-			//
-			// "grid"
-			// When this is enabled, stepping left/right from a vertical stack
-			// to an adjacent vertical stack will land you at the same vertical
-			// index.
-			//
-			// Consider a deck with six slides ordered in two vertical stacks:
-			// 1.1    2.1
-			// 1.2    2.2
-			// 1.3    2.3
-			//
-			// If you're on slide 1.3 and navigate right, you will normally move
-			// from 1.3 -> 2.1. If "grid" is used, the same navigation takes you
-			// from 1.3 -> 2.3.
 			navigationMode: 'default',
 
 			// Randomizes the order of slides each time the presentation loads

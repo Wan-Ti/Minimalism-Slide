@@ -98,6 +98,14 @@ button:hover {
   cursor: pointer;
 }
 
+.menu .detail .tab a{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(116, 124, 124);
+}
+
 .menu .detail .tab.active {
   color: #fff;
 
@@ -204,5 +212,4 @@ button:hover {
 .menu .theme .align {
   margin-top: 20px;
 }
-
 

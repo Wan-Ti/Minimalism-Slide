@@ -1,23 +1,16 @@
-/*
- * @Author: your name
- * @Date: 2020-03-04 20:50:20
- * @LastEditTime: 2020-03-09 22:01:00
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /oneslide/css/main.js
- */
+
 const $ = s => document.querySelector(s)
 const $$ = s => document.querySelectorAll(s)
 const isMain = str => (/^#{1,2}(?!#)/).test(str)
 const isSub = str => (/^#{3}(?!#)/).test(str)
 const convert = raw => {
-  let arr = raw.split(/\n(?=\s*#{1,3}[^#])/).filter(s => s!="").map(s => s.trim())
+  let arr = raw.split(/\n(?=\s*#{1,3}[^#])/).filter(s => s != "").map(s => s.trim())
 
   let html = ''
-  for(let i=0; i<arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
 
-    if(arr[i+1] !== undefined) {
-      if(isMain(arr[i]) && isMain(arr[i+1])) {
+    if (arr[i + 1] !== undefined) {
+      if (isMain(arr[i]) && isMain(arr[i + 1])) {
         html += `
 <section data-markdown>
 <textarea data-template>
@@ -25,7 +18,7 @@ ${arr[i]}
 </textarea>
 </section>
 `
-      } else if(isMain(arr[i]) && isSub(arr[i+1])) {
+      } else if (isMain(arr[i]) && isSub(arr[i + 1])) {
         html += `
 <section>
 <section data-markdown>
@@ -34,7 +27,7 @@ ${arr[i]}
 </textarea>
 </section>
 `
-      } else if(isSub(arr[i]) && isSub(arr[i+1])) {
+      } else if (isSub(arr[i]) && isSub(arr[i + 1])) {
         html += `
 <section data-markdown>
 <textarea data-template>
@@ -42,7 +35,7 @@ ${arr[i]}
 </textarea>
 </section>
 `
-      } else if(isSub(arr[i]) && isMain(arr[i+1])) {
+      } else if (isSub(arr[i]) && isMain(arr[i + 1])) {
         html += `
 <section data-markdown>
 <textarea data-template>
@@ -51,18 +44,18 @@ ${arr[i]}
 </section>
 </section>
 `
-      }      
+      }
 
     } else {
-      if(isMain(arr[i])) {
+      if (isMain(arr[i])) {
         html += `
 <section data-markdown>
 <textarea data-template>
 ${arr[i]}
 </textarea>
 </section>
-`        
-      } else if(isSub(arr[i])) {
+`
+      } else if (isSub(arr[i])) {
         html += `
 <section data-markdown>
 <textarea data-template>
@@ -70,7 +63,7 @@ ${arr[i]}
 </textarea>
 </section>
 </section>
-`        
+`
       }
     }
 
@@ -127,18 +120,18 @@ const ImgUploader = {
 
   bind() {
     let self = this
-    this.$fileInput.onchange = function() {
+    this.$fileInput.onchange = function () {
       if (this.files.length > 0) {
         let localFile = this.files[0]
         console.log(localFile)
-        if(localFile.size/1048576 > 2) {
+        if (localFile.size / 1048576 > 2) {
           alert('文件不能超过2M')
           return
         }
         self.insertText(`![上传中，进度0%]()`)
-        let  avFile = new AV.File(encodeURI(localFile.name), localFile)
-        avFile.save({ 
-          keepFileName: true, 
+        let avFile = new AV.File(encodeURI(localFile.name), localFile)
+        avFile.save({
+          keepFileName: true,
           onprogress(progress) {
             self.insertText(`![上传中，进度${progress.percent}%]()`)
           }
@@ -148,7 +141,7 @@ const ImgUploader = {
           let text = `![${file.attributes.name}](${file.attributes.url}?imageView2/0/w/800/h/400)`
           self.insertText(text)
         }).catch(err => console.log(err))
-       }     
+      }
     }
   },
 
@@ -160,7 +153,7 @@ const ImgUploader = {
 
     $textarea.value = `${oldText.substring(0, start)}${text} ${oldText.substring(end)}`
     $textarea.focus()
-    $textarea.setSelectionRange(start, start + text.length) 
+    $textarea.setSelectionRange(start, start + text.length)
   }
 }
 
@@ -171,8 +164,7 @@ const Editor = {
     this.$editInput = $('.editor textarea')
     this.$saveBtn = $('.editor .button-save')
     this.$slideContainer = $('.slides')
-    this.markdown = localStorage.markdown || `# one slide`
-
+    this.markdown = localStorage.markdown || `# 极简让工作更高效`
     this.bind()
     this.start()
   },
@@ -188,21 +180,20 @@ const Editor = {
     this.$editInput.value = this.markdown
     this.$slideContainer.innerHTML = convert(this.markdown)
     Reveal.initialize({
-          controls: true,
-          progress: true,
-          center: localStorage.align === 'left-top' ? false : true,
-          hash: true,
-          transition: localStorage.transition || 'slide', // none/fade/slide/convex/concave/zoom
-          // More info https://github.com/hakimel/reveal.js#dependencies
-          dependencies: [
-            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'plugin/highlight/highlight.js' },
-            { src: 'plugin/search/search.js', async: true },
-            { src: 'plugin/zoom-js/zoom.js', async: true },
-            { src: 'plugin/notes/notes.js', async: true }
-          ]
-        })
+      controls: true,
+      progress: true,
+      center: localStorage.align === 'left-top' ? false : true,
+      hash: true,
+      transition: localStorage.transition || 'slide',
+      dependencies: [
+        { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/highlight/highlight.js' },
+        { src: 'plugin/search/search.js', async: true },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    })
   }
 }
 
@@ -225,12 +216,12 @@ const Theme = {
       this.setTheme($figure.dataset.theme)
     })
 
-    this.$transition.onchange = function() {
+    this.$transition.onchange = function () {
       localStorage.transition = this.value
       location.reload()
     }
 
-    this.$align.onchange = function() {
+    this.$align.onchange = function () {
       localStorage.align = this.value
       location.reload()
     }
@@ -248,7 +239,6 @@ const Theme = {
     $link.href = `css/theme/${theme}.css`
     document.head.appendChild($link)
 
-    //$(`.theme figure[data-theme=${theme}]`)
     Array.from(this.$$figures).find($figure => $figure.dataset.theme === theme).classList.add('select')
     this.$transition.value = localStorage.transition || 'slide'
     this.$align.value = localStorage.align || 'center'
@@ -256,7 +246,7 @@ const Theme = {
   }
 }
 
-const Print =  {
+const Print = {
   init() {
     this.$download = $('.download')
 
@@ -282,7 +272,7 @@ const Print =  {
     let link = document.createElement('link')
     link.rel = 'stylesheet'
     link.type = 'text/css'
-    if(window.location.search.match(/print-pdf/gi)) {
+    if (window.location.search.match(/print-pdf/gi)) {
       link.href = 'css/print/pdf.css'
       window.print()
     } else {
